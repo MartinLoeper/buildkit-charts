@@ -30,7 +30,8 @@ spec:
             - name: new-certs
               mountPath: /etc/ssl/certs
           env:
-            CA_CERT_0: |
+            - name: CA_CERT_0
+              value: |
                 -----BEGIN CERTIFICATE-----
                 MIIDFDCCAfygAwIBAgIRALyGPTcTTnAo8BR1LXO5aa4wDQYJKoZIhvcNAQELBQAw
                 FDESMBAGA1UEAxMJaGFyYm9yLWNhMB4XDTI0MTAxNjIyMzYxNloXDTI1MTAxNjIy
