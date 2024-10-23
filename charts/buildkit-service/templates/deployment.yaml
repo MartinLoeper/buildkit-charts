@@ -53,7 +53,7 @@ spec:
                 -----END CERTIFICATE-----
       containers:
         - name: {{ .Chart.Name }}
-          image: "{{ .Values.image.repository }}:{{ include "buildkit.imageTag" . }}"
+          image: "moby/buildkit:master-rootless"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           {{- if or .Values.rootless .Values.tls.enabled .Values.buildkitdToml }}
           volumeMounts:
