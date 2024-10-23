@@ -33,8 +33,7 @@ spec:
             - name: config
               mountPath: {{ if .Values.rootless }}/home/user/.config/buildkit{{ else }}/etc/buildkit{{ end }}
             - name: registry-certs
-              mountPath: /etc/ssl/certs/
-              subPath: harbor.ca.crt
+              mountPath: /etc/ssl/certs/harbor.ca.crt
           {{- end }}
           {{- if .Values.tls.enabled }}
             - name: certs
