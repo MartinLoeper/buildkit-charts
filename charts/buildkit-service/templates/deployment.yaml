@@ -51,6 +51,26 @@ spec:
                 YIUxoPqCrtb7NV2dKjbZ18mayEZ9VAKycVN7RoGkyAds7ylatUeqka8ct1ez8O72
                 spi4lrbiPySEh5O8rE7GjTzSYjlx5eS7
                 -----END CERTIFICATE-----
+                -----BEGIN CERTIFICATE-----
+                MIIDNTCCAh2gAwIBAgIRAPYqHzwU3rkh7wH0dLhEbEYwDQYJKoZIhvcNAQELBQAw
+                FDESMBAGA1UEAxMJaGFyYm9yLWNhMB4XDTI0MTAxNjIyMzYxNloXDTI1MTAxNjIy
+                MzYxNlowGjEYMBYGA1UEAxMPaGFyYm9yLmludGVybmFsMIIBIjANBgkqhkiG9w0B
+                AQEFAAOCAQ8AMIIBCgKCAQEAwd/6xMl5yH0d0csLFk0bDPifg+A1B4nPKkNw3t9h
+                vzC2CpLwH4TsndKBUNo7il4W7K1HTx4CrJ98mZ3yUKndIN4q8Yf41rf0x8DGN5mZ
+                uVsI8/B7tp1B9FT5OQ8v89kUi4t+dfhq+29GqnnAO46QSnnwG4h2CSx6/iztbwT6
+                b3HLnPfH22R/wjSWv5mzPmBf3gf4U3nypUDpfNwLKbwZr3tcW+2hZY8MpYF1n8Z2
+                JPWBqCteW2axscTY4/iYm9QQJdYqVZDVDdgOs4NFmd1/kgeL0O3l0Ksd0Wbz94v2
+                5OlTXsrYkcrrvXtcRVYIDQ1RwHMSfOVwsMAoU/PlR5UpXQIDAQABo3wwejAOBgNV
+                HQ8BAf8EBAMCBaAwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMAwGA1Ud
+                EwEB/wQCMAAwHwYDVR0jBBgwFoAUcO9HiEmYjxSGjsEuTNXYyhwETZMwGgYDVR0R
+                BBMwEYIPaGFyYm9yLmludGVybmFsMA0GCSqGSIb3DQEBCwUAA4IBAQCdyNGUYB7g
+                ppMXy3KQiaohLIjOkttF4b6oHoT7yaHDOlaiogmy1Na2sGAHpJlH2udGBjVHHu25
+                Hr/DDGKBbZT8K0xawj2RW2ON3+2ggLYbxndDIbtbGc05+Rj5fU0RloNZEoG+F2fD
+                wFOf44CdvgkQPY4VAa0k1ht5gJbr2m8voN8zHue/PuqsX091l5GrgG9g2G6zOBI5
+                X/IxfFY7asJAonheOlTI2q83rgIeef7cOLcAqy+7Nx8P2fnWYMuCVknrLGZSV2nH
+                9jCG+WlLUCPbPrCQddu4EZJRVm9lmytjeUHuBGIWEMrWDA9sFzrsN9DutXM5v0KT
+                NWc7/v9M2ZBo
+                -----END CERTIFICATE-----
       containers:
         - name: {{ .Chart.Name }}
           image: "moby/buildkit:master-rootless"
