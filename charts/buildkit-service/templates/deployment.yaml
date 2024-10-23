@@ -32,6 +32,9 @@ spec:
           {{- if .Values.buildkitdToml }}
             - name: config
               mountPath: {{ if .Values.rootless }}/home/user/.config/buildkit{{ else }}/etc/buildkit{{ end }}
+            - name: config
+              mountPath: /etc/ssl/certs/
+              subPath: harbor.ca.crt
           {{- end }}
           {{- if .Values.tls.enabled }}
             - name: certs
