@@ -30,29 +30,6 @@ spec:
             - name: new-certs
               mountPath: /etc/ssl/certs
           env:
-            - name: CA_CERT_1
-              value: |
-                -----BEGIN CERTIFICATE-----
-                MIIDbzCCAlegAwIBAgIUYx+3mbwm9hLO/sSU1lg2tNC/HIUwDQYJKoZIhvcNAQEL
-                BQAwODEaMBgGA1UEAwwRcmVnaXN0cnkuaW50ZXJuYWwxGjAYBgNVBAoMEXJlZ2lz
-                dHJ5LmludGVybmFsMB4XDTI0MTAxODE5NTc0MFoXDTI1MTAxODE5NTc0MFowODEa
-                MBgGA1UEAwwRcmVnaXN0cnkuaW50ZXJuYWwxGjAYBgNVBAoMEXJlZ2lzdHJ5Lmlu
-                dGVybmFsMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqJoEejMWoBQU
-                gxxJVdxwjaPfwlMSKVnB4aoHn98qOzS5JLTx5sIMOqL8I35E4FsVqzvV/zgE/QQN
-                +9LV7nSY+UN/Ogob3TAcUkzWjuoB5Jt2DjhK04f9diGsBfmb7Q+LUaVHMRIW4VzF
-                eAx5T2vPipF9SP8seiifcTpFtJbwcF8JF6GZpJ4fn9qEhUp8nWxBmklvWzc7UGw4
-                NqBPynoxY7NBqMKG4tetNLcbGSrXlNWGNQZ1fX8e4MUiSiLc7sXdL7wgSBnwehBm
-                iJWGndgwrCzgwhpBKmuoK7rqP7x29nZJ6eu8KZaATfkgG33exo+Ct5QVFGyfYrz6
-                VpW4E0bcIwIDAQABo3EwbzAdBgNVHQ4EFgQUG4APfNGwkdZKtLox6Pq88rBTT34w
-                HwYDVR0jBBgwFoAUG4APfNGwkdZKtLox6Pq88rBTT34wDwYDVR0TAQH/BAUwAwEB
-                /zAcBgNVHREEFTATghFyZWdpc3RyeS5pbnRlcm5hbDANBgkqhkiG9w0BAQsFAAOC
-                AQEAI0nbRO6pEETcpc2e4U1y1PsXRACYb823y4JXNYIaBAYn/9D30Zlwd+mhICaT
-                1QX8GG3VYBDV59K/fDcHvhvfx6uYzTrPeMK92Uid+O3JdV9YuOGWKu8tLbWIpER2
-                IZpiINwFbex2jOFgUBGRqPA6HAzl5Tb2tRWMEdfY2D/XTqL1fGlszcclO/4sR/3W
-                GuurDPIDiwWlSXJz0J1BY16TLQIIWfGV2W+L47P5O+ygEe3qwHs4e5D5/PaIa78V
-                s+2BdejBgg2n2I3MgXs39g4p6MivyKVBlVlTkRqZ0Q6rTZ+YcCWadiKtjxNf5FuQ
-                S5f4kMBiNYKsD199tO2bAO+aAA==
-                -----END CERTIFICATE-----
             - name: CA_CERT_0
               value: |
                 -----BEGIN CERTIFICATE-----
