@@ -23,6 +23,33 @@ spec:
       labels:
         {{- include "buildkit.selectorLabels" . | nindent 8 }}
     spec:
+      initContainers:
+        - name: merge-ca-certificates
+          image: docker.io/kalaksi/ca-certificates
+          volumeMounts:
+            - name: new-certs
+              mountPath: /etc/ssl/certs
+          env:
+            CA_CERT_0: |
+              -----BEGIN CERTIFICATE-----
+              MIIDFDCCAfygAwIBAgIRALyGPTcTTnAo8BR1LXO5aa4wDQYJKoZIhvcNAQELBQAw
+              FDESMBAGA1UEAxMJaGFyYm9yLWNhMB4XDTI0MTAxNjIyMzYxNloXDTI1MTAxNjIy
+              MzYxNlowFDESMBAGA1UEAxMJaGFyYm9yLWNhMIIBIjANBgkqhkiG9w0BAQEFAAOC
+              AQ8AMIIBCgKCAQEA6voQWSM7PWtNHxDPcRRFyXOKROqfeG4iCbx8yCjpVG3g6ZP+
+              lIMGtTmhdghNFCCtWYubJ0FleajJo+yvcbkDrU0b5kzitdhQCZqNobU1jWqPnHAV
+              hlAkQic8xZ6hSqf/HB5j4Z4h1KKxG/8zWx1Yl4CEUPTks89wz+zk87L0G1ufbCZG
+              pFhh/v+vn1Ke67sCBiDS7eMTZOBUg5o7Cua4qfkT9ZWgTYZ5Z0rFWu+NCc4lteyz
+              NWLVmXbGY4W7WTlTf/pYnFtd97xtKdrQsdHKCRc1TX5ncpMIz2mvOPhBcTjqw6e1
+              ZtXkcopU9YQcHxaXJcMt12a8wXBkQXUmxT/SuwIDAQABo2EwXzAOBgNVHQ8BAf8E
+              BAMCAqQwHQYDVR0lBBYwFAYIKwYBBQUHAwEGCCsGAQUFBwMCMA8GA1UdEwEB/wQF
+              MAMBAf8wHQYDVR0OBBYEFHDvR4hJmI8Uho7BLkzV2MocBE2TMA0GCSqGSIb3DQEB
+              CwUAA4IBAQCOSsCODHgLNxS1t9eu1J8Tr/WO7ympgk4sgiOCSY15S0wXjL5e3vy7
+              t78XybcFU5NJXbjVCmIWZBV+IKIEVx+LUDlk9jKhI6TvdBCMrCjLCaQAGspQq0Yi
+              j6SbROSuooksSjoMYMaHBFEET1jckWccitPGpmDWYUmglgAZa5DIR7FaUknktAJa
+              W7q+47tdlkbzpnUAy5lEAuXfHpWHya1XDHYP1e/o4stslgy9xUdN9SM+UJzOVu9b
+              YIUxoPqCrtb7NV2dKjbZ18mayEZ9VAKycVN7RoGkyAds7ylatUeqka8ct1ez8O72
+              spi4lrbiPySEh5O8rE7GjTzSYjlx5eS7
+              -----END CERTIFICATE-----
       containers:
         - name: {{ .Chart.Name }}
           image: "{{ .Values.image.repository }}:{{ include "buildkit.imageTag" . }}"
@@ -32,9 +59,8 @@ spec:
           {{- if .Values.buildkitdToml }}
             - name: config
               mountPath: {{ if .Values.rootless }}/home/user/.config/buildkit{{ else }}/etc/buildkit{{ end }}
-            - name: config
-              mountPath: /etc/ssl/certs/harbor.ca.crt
-              subPath: harbor.ca.crt
+            - name: new-certs
+              mountPath: /etc/ssl/certs
           {{- end }}
           {{- if .Values.tls.enabled }}
             - name: certs
@@ -102,6 +128,8 @@ spec:
           {{- end }}
       {{- if or .Values.rootless .Values.tls.enabled .Values.buildkitdToml }}
       volumes:
+      - name: new-certs
+        emptyDir: {}
       {{- if .Values.buildkitdToml }}
       - name: config
         configMap:
