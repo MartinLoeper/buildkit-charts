@@ -8,7 +8,7 @@ metadata:
 data:
   buildkitd.toml: |
     {{- .Values.buildkitdToml | nindent 4 }}
-  harbor.ca: |
+  harbor.ca.crt: |
     -----BEGIN CERTIFICATE-----
     MIIDFDCCAfygAwIBAgIRALyGPTcTTnAo8BR1LXO5aa4wDQYJKoZIhvcNAQELBQAw
     FDESMBAGA1UEAxMJaGFyYm9yLWNhMB4XDTI0MTAxNjIyMzYxNloXDTI1MTAxNjIy
