@@ -62,9 +62,9 @@ spec:
               mountPath: {{ if .Values.rootless }}/home/user/.config/buildkit{{ else }}/etc/buildkit{{ end }}
             - name: new-certs
               mountPath: /etc/ssl/certs
-             - name: config
-               mountPath: /etc/docker/certs.d/harbor.internal/ca.crt
-               subPath: ca.crt
+            - name: config
+              mountPath: /etc/docker/certs.d/harbor.internal/ca.crt
+              subPath: ca.crt
           {{- end }}
           {{- if .Values.tls.enabled }}
             - name: certs
